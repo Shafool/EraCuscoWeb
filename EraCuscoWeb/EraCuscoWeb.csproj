@@ -114,16 +114,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\Content\bootstrap.min.css" />
     <Content Include="Admin\Menu.aspx" />
-    <Content Include="BDEraCuscoModelos.Context.tt">
+    <Content Include="BD_EraCusco_Modelos.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BDEraCuscoModelos.Context.cs</LastGenOutput>
-      <DependentUpon>BDEraCuscoModelos.edmx</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
+      <LastGenOutput>BD_EraCusco_Modelos.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="BDEraCuscoModelos.tt">
+    <Content Include="BD_EraCusco_Modelos.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BDEraCuscoModelos.edmx</DependentUpon>
-      <LastGenOutput>BDEraCuscoModelos.cs</LastGenOutput>
+      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
+      <LastGenOutput>BD_EraCusco_Modelos.cs</LastGenOutput>
     </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -131,6 +132,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\ERA_logo_chico.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -144,12 +146,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Admin\Admin.Master" />
-    <EntityDeploy Include="BDEraCuscoModelos.edmx">
+    <EntityDeploy Include="BD_EraCusco_Modelos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BDEraCuscoModelos.Designer.cs</LastGenOutput>
+      <LastGenOutput>BD_EraCusco_Modelos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="BDEraCuscoModelos.edmx.diagram">
-      <DependentUpon>BDEraCuscoModelos.edmx</DependentUpon>
+    <Content Include="BD_EraCusco_Modelos.edmx.diagram">
+      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -202,7 +204,7 @@
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Adopcion.cs">
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -213,20 +215,20 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="BDEraCuscoModelos.Context.cs">
+    <Compile Include="BD_EraCusco_Modelos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDEraCuscoModelos.Context.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BDEraCuscoModelos.cs">
+    <Compile Include="BD_EraCusco_Modelos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
-    <Compile Include="BDEraCuscoModelos.Designer.cs">
+    <Compile Include="BD_EraCusco_Modelos.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDEraCuscoModelos.edmx</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -246,7 +248,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mascota.cs">
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -264,16 +266,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Solicitud.cs">
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagrams.cs">
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAdoptante.cs">
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAlbergue.cs">
-      <DependentUpon>BDEraCuscoModelos.tt</DependentUpon>
+      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

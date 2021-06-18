@@ -2,19 +2,68 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %>Panel de Control</title>
+
+    <webopt:bundlereference runat="server" path="~/Admin/Content/bootstrap.min.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-            </asp:ContentPlaceHolder>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+	        <div class="container-fluid">
+		        <a class="navbar-brand" href="#">
+                    <asp:Image runat="server" ImageUrl="~/images/ERA_logo_chico.png" height="55" alt=""/>
+                </a>
+		        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+		        <span class="navbar-toggler-icon"></span>
+		        </button>
+		        <div class="collapse navbar-collapse" id="navbarColor01">
+			        <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/about">Mascotas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Adopciones</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Solicitudes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Trabajadores</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Usuarios Página Web</a></li>
+			        </ul>
+		        </div>
+	        </div>
+        </nav>
+
+        <%--Banner--%>
+        <div class="text-center">
+            <div class="d-flex justify-content-center align-items-bottom h-100">
+                <div class="py-5 text-black">
+                    <h1 class="mb-3">
+                        <asp:ContentPlaceHolder ID="Titulo" runat="server" />
+                    </h1>
+                    <p class="mb-3 lead" >
+                        <asp:ContentPlaceHolder ID="Descripcion" runat="server" />
+                    </p>
+                </div>
+            </div>
         </div>
+
+        <%--Body--%>
+        <div class="container body-content">
+            <%--Contenido de la pagina--%>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            <hr/>
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - Mi aplicación ASP.NET</p>
+            </footer>
+        </div>
+
     </form>
 </body>
 </html>

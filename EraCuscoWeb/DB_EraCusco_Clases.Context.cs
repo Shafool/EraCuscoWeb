@@ -13,10 +13,10 @@ namespace EraCuscoWeb
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BDEraCuscoEntities : DbContext
+    public partial class BD_EraCuscoEntidades : DbContext
     {
-        public BDEraCuscoEntities()
-            : base("name=BDEraCuscoEntities")
+        public BD_EraCuscoEntidades()
+            : base("name=BD_EraCuscoEntidades")
         {
         }
     
@@ -28,7 +28,6 @@ namespace EraCuscoWeb
         public virtual DbSet<Adopcion> Adopcion { get; set; }
         public virtual DbSet<Mascota> Mascota { get; set; }
         public virtual DbSet<Solicitud> Solicitud { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<UsuarioAdoptante> UsuarioAdoptante { get; set; }
         public virtual DbSet<UsuarioAlbergue> UsuarioAlbergue { get; set; }
     }

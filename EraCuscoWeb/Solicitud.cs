@@ -28,8 +28,8 @@ namespace EraCuscoWeb
         public string adDireccion { get; set; }
         public string tipoVivienda { get; set; }
         public Nullable<int> otrasMascotas { get; set; }
-        public Nullable<int> esteriziacion { get; set; }
         public Nullable<System.DateTime> fechaEmision { get; set; }
+        public Nullable<int> estado { get; set; }
         public Nullable<int> mascota { get; set; }
         public Nullable<int> adoptante { get; set; }
     
