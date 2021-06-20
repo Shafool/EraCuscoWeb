@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f16c8a884d0b4764bf12a8115f570e33" Name="Diagram1">
+        <EntityTypeShape EntityType="BD_EraCuscoModel.Adopcion" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_EraCuscoModel.Mascota" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_EraCuscoModel.Solicitud" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_EraCuscoModel.UsuarioAdoptante" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_EraCuscoModel.UsuarioAlbergue" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Adopcion__adopta__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Adopcion__mascot__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Adopcion__solici__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Adopcion__usuari__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Mascota__usuario__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Solicitud__masco__1BFD2C07" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_EraCuscoModel.FK__Solicitud__adopt__1CF15040" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

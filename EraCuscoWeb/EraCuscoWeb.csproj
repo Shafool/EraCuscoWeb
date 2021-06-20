@@ -114,24 +114,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\Adopciones.aspx" />
     <Content Include="Admin\Content\bootstrap.min.css" />
     <Content Include="Admin\Menu.aspx" />
-    <Content Include="BD_EraCusco_Modelos.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
-      <LastGenOutput>BD_EraCusco_Modelos.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BD_EraCusco_Modelos.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
-      <LastGenOutput>BD_EraCusco_Modelos.cs</LastGenOutput>
-    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="DB_EraCusco_Modelos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB_EraCusco_Modelos.edmx</DependentUpon>
+      <LastGenOutput>DB_EraCusco_Modelos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DB_EraCusco_Modelos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DB_EraCusco_Modelos.edmx</DependentUpon>
+      <LastGenOutput>DB_EraCusco_Modelos.cs</LastGenOutput>
+    </Content>
     <Content Include="images\ERA_logo_chico.png" />
     <Content Include="Inicio.aspx" />
     <Content Include="favicon.ico" />
@@ -146,12 +147,12 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Admin\Admin.Master" />
-    <EntityDeploy Include="BD_EraCusco_Modelos.edmx">
+    <EntityDeploy Include="DB_EraCusco_Modelos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BD_EraCusco_Modelos.Designer.cs</LastGenOutput>
+      <LastGenOutput>DB_EraCusco_Modelos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="BD_EraCusco_Modelos.edmx.diagram">
-      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
+    <Content Include="DB_EraCusco_Modelos.edmx.diagram">
+      <DependentUpon>DB_EraCusco_Modelos.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -196,6 +197,13 @@
     <Compile Include="Admin\Admin.Master.designer.cs">
       <DependentUpon>Admin.Master</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Adopciones.aspx.cs">
+      <DependentUpon>Adopciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Adopciones.aspx.designer.cs">
+      <DependentUpon>Adopciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Menu.aspx.cs">
       <DependentUpon>Menu.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -204,7 +212,7 @@
       <DependentUpon>Menu.aspx</DependentUpon>
     </Compile>
     <Compile Include="Adopcion.cs">
-      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
+      <DependentUpon>DB_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
@@ -215,27 +223,27 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="BD_EraCusco_Modelos.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BD_EraCusco_Modelos.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BD_EraCusco_Modelos.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BD_EraCusco_Modelos.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BD_EraCusco_Modelos.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DB_EraCusco_Modelos.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_EraCusco_Modelos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB_EraCusco_Modelos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_EraCusco_Modelos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB_EraCusco_Modelos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DB_EraCusco_Modelos.edmx</DependentUpon>
     </Compile>
     <Compile Include="Inicio.aspx.cs">
       <DependentUpon>Inicio.aspx</DependentUpon>
@@ -248,7 +256,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mascota.cs">
-      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
+      <DependentUpon>DB_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -266,13 +274,13 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Solicitud.cs">
-      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
+      <DependentUpon>DB_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAdoptante.cs">
-      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
+      <DependentUpon>DB_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="UsuarioAlbergue.cs">
-      <DependentUpon>BD_EraCusco_Modelos.tt</DependentUpon>
+      <DependentUpon>DB_EraCusco_Modelos.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

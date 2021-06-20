@@ -10,12 +10,25 @@
     <title><%: Page.Title %>Panel de Control</title>
 
     <webopt:bundlereference runat="server" path="~/Admin/Content/bootstrap.min.css" />
+    <script src="https://kit.fontawesome.com/9b7578cb65.js" crossorigin="anonymous"/>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>
 <body>
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
             </Scripts>
         </asp:ScriptManager>
 
@@ -29,12 +42,12 @@
 		        </button>
 		        <div class="collapse navbar-collapse" id="navbarColor01">
 			        <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/">Menú</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/about">Mascotas</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Adopciones</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Solicitudes</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Trabajadores</a></li>
-                        <li class="nav-item"><a class="nav-link" runat="server" href="~/contact">Usuarios Página Web</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Admin/Menu">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Admin/Mascotas">Mascotas</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Admin/Adopciones">Adopciones</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Admin/Solicitudes">Solicitudes</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Admin/Trabajadores">Trabajadores</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Admin/UsuariosWeb">Usuarios Página Web</a></li>
 			        </ul>
 		        </div>
 	        </div>
