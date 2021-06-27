@@ -23,6 +23,7 @@
           <Property Name="usuarioAlbergue" Type="int" />
           <Property Name="adoptante" Type="int" />
           <Property Name="solicitud" Type="int" />
+          <Property Name="adTelefono" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="Mascota">
           <Key>
@@ -55,6 +56,7 @@
           <Property Name="estado" Type="int" />
           <Property Name="mascota" Type="int" />
           <Property Name="adoptante" Type="int" />
+          <Property Name="adTelefono" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="UsuarioAdoptante">
           <Key>
@@ -227,6 +229,7 @@
           <Property Name="usuarioAlbergue" Type="Int32" />
           <Property Name="adoptante" Type="Int32" />
           <Property Name="solicitud" Type="Int32" />
+          <Property Name="adTelefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="UsuarioAdoptante" Relationship="Self.FK__Adopcion__adopta__1A14E395" FromRole="Adopcion" ToRole="UsuarioAdoptante" />
           <NavigationProperty Name="Mascota1" Relationship="Self.FK__Adopcion__mascot__182C9B23" FromRole="Adopcion" ToRole="Mascota" />
           <NavigationProperty Name="Solicitud1" Relationship="Self.FK__Adopcion__solici__1B0907CE" FromRole="Adopcion" ToRole="Solicitud" />
@@ -266,6 +269,7 @@
           <Property Name="estado" Type="Int32" />
           <Property Name="mascota" Type="Int32" />
           <Property Name="adoptante" Type="Int32" />
+          <Property Name="adTelefono" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Adopcion" Relationship="Self.FK__Adopcion__solici__1B0907CE" FromRole="Solicitud" ToRole="Adopcion" />
           <NavigationProperty Name="Mascota1" Relationship="Self.FK__Solicitud__masco__1BFD2C07" FromRole="Solicitud" ToRole="Mascota" />
           <NavigationProperty Name="UsuarioAdoptante" Relationship="Self.FK__Solicitud__adopt__1CF15040" FromRole="Solicitud" ToRole="UsuarioAdoptante" />
@@ -387,7 +391,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BD_EraCuscoEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BD_EraCuscoEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Adopcion" EntityType="Self.Adopcion" />
           <EntitySet Name="Mascota" EntityType="Self.Mascota" />
           <EntitySet Name="Solicitud" EntityType="Self.Solicitud" />
@@ -427,7 +431,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BD_EraCuscoModelStoreContainer" CdmEntityContainer="BD_EraCuscoEntities1">
+        <EntityContainerMapping StorageEntityContainer="BD_EraCuscoModelStoreContainer" CdmEntityContainer="BD_EraCuscoEntities2">
           <EntitySetMapping Name="Adopcion">
             <EntityTypeMapping TypeName="BD_EraCuscoModel.Adopcion">
               <MappingFragment StoreEntitySet="Adopcion">
@@ -445,6 +449,7 @@
                 <ScalarProperty Name="usuarioAlbergue" ColumnName="usuarioAlbergue" />
                 <ScalarProperty Name="adoptante" ColumnName="adoptante" />
                 <ScalarProperty Name="solicitud" ColumnName="solicitud" />
+                <ScalarProperty Name="adTelefono" ColumnName="adTelefono" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -479,6 +484,7 @@
                 <ScalarProperty Name="estado" ColumnName="estado" />
                 <ScalarProperty Name="mascota" ColumnName="mascota" />
                 <ScalarProperty Name="adoptante" ColumnName="adoptante" />
+                <ScalarProperty Name="adTelefono" ColumnName="adTelefono" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

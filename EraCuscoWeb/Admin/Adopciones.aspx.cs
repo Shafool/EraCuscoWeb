@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EraCuscoWeb.Admin
 {
@@ -12,16 +16,21 @@ namespace EraCuscoWeb.Admin
         DateTime fechaSeleccionada;
         protected void Page_Load(object sender, EventArgs e)
         {
-            listar();
+            
         }
 
-        private void listar()
+        public string obtenerDatos()
         {
-            using (BD_EraCuscoEntities1 entidades = new BD_EraCuscoEntities1())
+            List<Mascota> listaAdopciones = new List<Mascota>();
+            string jsonString = "{}"; // Por defecto se tiene una lista vacia
+
+            using (BD_EraCuscoEntities2 datos = new BD_EraCuscoEntities2())
             {
-                gridView.DataSource = entidades.Mascota.ToList();
-                gridView.DataBind();
+                listaAdopciones = datos.Mascota.ToList();
+                jsonString = JsonSerializer.Serialize(listaAdopciones);
+
             }
+            return jsonString;
         }
     }
 }

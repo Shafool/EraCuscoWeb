@@ -28,6 +28,7 @@ namespace EraCuscoWeb
         public Nullable<int> usuarioAlbergue { get; set; }
         public Nullable<int> adoptante { get; set; }
         public Nullable<int> solicitud { get; set; }
+        public string adTelefono { get; set; }
     
         public virtual UsuarioAdoptante UsuarioAdoptante { get; set; }
         public virtual Mascota Mascota1 { get; set; }

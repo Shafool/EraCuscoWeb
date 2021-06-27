@@ -1,36 +1,25 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Menu.aspx.cs" Inherits="EraCuscoWeb.Admin.Menu" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Solicitudes.aspx.cs" Inherits="EraCuscoWeb.Admin.Solicitudes" %>
 
 <asp:Content ID="Titulo" ContentPlaceHolderID="Titulo" runat="server">
-Menú Principal
+    Solicitudes
 </asp:Content>
 
 <asp:Content ID="Descripcion" ContentPlaceHolderID="Descripcion" runat="server">
-Aquí podras gestionar las mascotas en el albergue
+    Aquí podrás gestionar las adopciones realizadas y registrar nuevas adopciones de las mascotas
 </asp:Content>
 
 <asp:Content ID="MainContent" ContentPlaceHolderID="MainContent" runat="server">
-<script>
-    var jsonMascotas = <%=obtenerMascotas()%>
-    var etapas = {
-        1: "Bebé",
-        2: "Joven",
-        3: "Adulto",
-        4: "Anciano",
-    }
-    var estados= {
-        0: "Adoptado",
-        1: "Disponible"
-    }
+    <script>
 
-</script>
+    </script>
 
     <%--Botonera y acciones--%>
     <div class="d-flex flex-wrap justify-content-center">
 
-        <asp:LinkButton id="btNuevaMascota" class="btn btn-primary mx-1" data-toggle="modal" data-target="#modalAgregarMascota" runat="server" OnClientClick="return false;">
+        <asp:Linkbutton id="btNuevaSolicitud" runat="server" class="btn btn-primary mx-1">
             <i class="fas fa-plus"></i>
-            Registrar una mascota
-        </asp:LinkButton>
+            Registrar una adopción
+        </asp:Linkbutton>
 
         <asp:Linkbutton id="btActualizar" runat="server" class="btn btn-outline-primary mx-1">
             <i class="fas fa-sync-alt"></i>
@@ -47,17 +36,21 @@ Aquí podras gestionar las mascotas en el albergue
         <%--Tabla--%>
         <div class="d-flex flex-wrap justify-content-center">
             <div class="card p-3 my-5 carta">
-                <table id="tbMascotas" class="table">
+                <table id="tbSolicitudes" class="table">
                     <thead>
                         <tr>
                             <th>Código</th>
-                            <th>Foto</th>
                             <th>Mascota</th>
-                            <th>Etapa de vida</th>
-                            <th>Estado</th>   
-                            <th>Fecha de registro</th>
-                            <th>Usuario registrador</th>
-                            <th>Acciones</th>
+                            <th>Adoptante</th>
+                            <th>DNI</th>
+                            <th>Vivienda</th>
+                            <th>Tiene otras mascotas</th>
+                            <th>Esterilización</th>
+                            <th>Fecha</th>
+
+                            <th>Usuario adoptante</th>
+                            <th>Solicitud</th>
+                            <th>Trabajador</th>
                         </tr>
                     </thead>
                 </table>
@@ -154,75 +147,15 @@ Aquí podras gestionar las mascotas en el albergue
                     <asp:Button type="button" class="btn btn-success" ID="btAgregarMascota" runat="server" Text="Agregar Mascota" />
               </div>
             </div>
-          </div 
+          </div>
         </form>
         </div>
 
         <%--Librería datatables--%>
         <script>
-                $(document).ready(function () {
-                    $('#tbMascotas').DataTable({
-                        "aaData": jsonMascotas,
-                        /*
-                        < th > Código</th >
-                        <th>Foto</th>
-                        <th>Mascota</th>
-                        <th>Etapa de vida</th>
-                        <th>Estado</th>   
-                        <th>Fecha de registro</th>
-                        <th>Usuario registrador</th>
-                        <th>Acciones</th>
-                        */
-                        "aoColumns": [
-                            { "data": "id" },
-                            {
-                                "data": "rutaFoto", "render": function (data) {
-                                    return `<img style="height: 100px; border-radius: 5px" src='${data}'></img>`
-                                },
-                                "orderable": false,
-                                "searchable": false
-                            },
-                            {
-                                "data": "nombre",
-                                "render": function (data, type, row, meta) {
-                                    return "<div class='column'> <div class='row'> <p style=''>" + data + "</p> </div> <div class='row'> <p style='font-size: 12px;'>" + row.tipo + "</p> </div> </div>";
-                                },
-                                "orderable": false,
-                                "searchable": false
-                            },
-                            {
-                                "data": "etapaVida",
-                                "render": function (data) {
-                                    return etapas[data];
-                                }
-                            },
-                            {
-                                "data": "estado",
-                                "render": function (data) {
-                                    switch (data) {
-                                        case 0:
-                                            return "<span class='badge rounded-pill bg-danger'>Adoptado</span>";
-                                            break;
-                                        case 1:
-                                            return "<span class='badge rounded-pill bg-success'>Disponible</span>";
-                                            break;
-                                    }
-                                }
-                            },
-                            { "data": "fechaRegistro" },
-                            { "data": "usuarioAlbergue" },
-                            {
-                                "render": function (data) {
-                                    return  "<div class='d-flex'>" +
-                                            "<button id='btEditar' class='btn btn-warning mx-1'><i class='fas fa-pencil-alt'></i></button>" +
-                                            "<button id='btEliminar' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button>" +
-                                            "<div>";
-                                }
-                            }
-                        ]
-                    });
-                });
-
-
+            $(document).ready(function () {
+                $('#tbSolicitudes').DataTable();
+            });
         </script>
+    </div>
 </asp:Content>

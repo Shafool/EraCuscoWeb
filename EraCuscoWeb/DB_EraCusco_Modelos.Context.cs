@@ -13,10 +13,10 @@ namespace EraCuscoWeb
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BD_EraCuscoEntities1 : DbContext
+    public partial class BD_EraCuscoEntities2 : DbContext
     {
-        public BD_EraCuscoEntities1()
-            : base("name=BD_EraCuscoEntities1")
+        public BD_EraCuscoEntities2()
+            : base("name=BD_EraCuscoEntities2")
         {
         }
     

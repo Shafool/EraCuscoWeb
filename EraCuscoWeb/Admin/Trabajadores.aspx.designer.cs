@@ -11,17 +11,17 @@ namespace EraCuscoWeb.Admin
 {
 
 
-    public partial class Menu
+    public partial class Trabajadores
     {
 
         /// <summary>
-        /// Control btNuevaMascota.
+        /// Control btNuevaSolicitud.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btNuevaMascota;
+        protected global::System.Web.UI.WebControls.LinkButton btNuevaSolicitud;
 
         /// <summary>
         /// Control btActualizar.
@@ -105,12 +105,12 @@ namespace EraCuscoWeb.Admin
         protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
 
         /// <summary>
-        /// Control btAgregarMascota.
+        /// Control btAgregarTrabajador.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btAgregarMascota;
+        protected global::System.Web.UI.WebControls.Button btAgregarTrabajador;
     }
 }

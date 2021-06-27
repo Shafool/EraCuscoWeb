@@ -32,6 +32,7 @@ namespace EraCuscoWeb
         public Nullable<int> estado { get; set; }
         public Nullable<int> mascota { get; set; }
         public Nullable<int> adoptante { get; set; }
+        public string adTelefono { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Adopcion> Adopcion { get; set; }
