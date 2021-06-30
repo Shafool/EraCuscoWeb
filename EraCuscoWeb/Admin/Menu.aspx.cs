@@ -10,8 +10,15 @@ namespace EraCuscoWeb.Admin
 {
     public partial class Menu : System.Web.UI.Page
     {
+        Dictionary<string, int> etapas = new Dictionary<string, int>();
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            etapas.Add("Bebe", 1);
+            etapas.Add("Joven", 2);
+            etapas.Add("Adulto", 3);
+            etapas.Add("Anciano", 4);
+
             /*
             if (!IsPostBack)
             {
@@ -55,6 +62,65 @@ namespace EraCuscoWeb.Admin
         protected void btNuevaMascota_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btConfirmarEliminacion_Click(object sender, EventArgs e)
+        {
+            int codigo = int.Parse(tbCodigoEliminar.Text.Trim());
+            using (Entidades datos = new Entidades())
+            {
+                Mascota m = datos.Mascota.Find(codigo);
+                datos.Mascota.Remove(m);
+                datos.SaveChanges();
+            }
+        }
+
+
+        
+        protected void btAgregarMascota_Click(object sender, EventArgs e)
+        {
+            string nombre = tbNombre.Text.Trim();
+            string descripcion = tbDescripcion.Text.Trim();
+            int etapaVida = ddEtapaVida.SelectedIndex + 1;
+            string tipo = ddTipo.SelectedValue;
+            string raza = tbRaza.Text.Trim();
+            DateTime localDate = DateTime.Now;
+
+            using (Entidades datos = new Entidades())
+            {
+                if (tbModo.Text == "editar")
+                {
+                    int codigo = int.Parse(tbId.Text.Trim());
+                    Mascota m = datos.Mascota.Find(codigo);
+                    if (m != null)
+                    {
+                        m.nombre = nombre;
+                        m.descripcion = descripcion;
+                        m.etapaVida = etapaVida;
+                        m.fechaRegistro = localDate;
+                        m.tipo = tipo;
+                        m.raza = raza;
+                        datos.SaveChanges();
+                    }
+                }
+                else if (tbModo.Text == "crear")
+                {
+                    Mascota m = new Mascota();
+                    m.nombre = nombre;
+                    m.descripcion = descripcion;
+                    m.etapaVida = etapaVida;
+                    m.fechaRegistro = localDate;
+                    m.tipo = tipo;
+                    m.raza = raza;
+                    m.estado = 1;
+                    m.rutaFoto = "https://www.randomdoggiegenerator.com/randomdoggie.php";
+                    m.usuarioAlbergue = 1;
+
+                    datos.Mascota.Add(m);
+                    datos.SaveChanges();
+
+                }
+            }
         }
     }
 }

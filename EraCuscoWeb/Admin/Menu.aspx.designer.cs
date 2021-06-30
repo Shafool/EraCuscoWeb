@@ -33,22 +33,22 @@ namespace EraCuscoWeb.Admin
         protected global::System.Web.UI.WebControls.LinkButton btActualizar;
 
         /// <summary>
-        /// Control tbBusqueda.
+        /// Control btConfirmarEliminacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbBusqueda;
+        protected global::System.Web.UI.WebControls.LinkButton btConfirmarEliminacion;
 
         /// <summary>
-        /// Control ddEspecie.
+        /// Control tbId.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddEspecie;
+        protected global::System.Web.UI.WebControls.TextBox tbId;
 
         /// <summary>
         /// Control tbNombre.
@@ -60,13 +60,13 @@ namespace EraCuscoWeb.Admin
         protected global::System.Web.UI.WebControls.TextBox tbNombre;
 
         /// <summary>
-        /// Control ddSexo.
+        /// Control tbDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddSexo;
+        protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
 
         /// <summary>
         /// Control ddEtapaVida.
@@ -78,6 +78,15 @@ namespace EraCuscoWeb.Admin
         protected global::System.Web.UI.WebControls.DropDownList ddEtapaVida;
 
         /// <summary>
+        /// Control ddTipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddTipo;
+
+        /// <summary>
         /// Control tbRaza.
         /// </summary>
         /// <remarks>
@@ -87,22 +96,22 @@ namespace EraCuscoWeb.Admin
         protected global::System.Web.UI.WebControls.TextBox tbRaza;
 
         /// <summary>
-        /// Control caFechaNacimiento.
+        /// Control tbCodigoEliminar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl caFechaNacimiento;
+        protected global::System.Web.UI.WebControls.TextBox tbCodigoEliminar;
 
         /// <summary>
-        /// Control tbDescripcion.
+        /// Control tbModo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tbDescripcion;
+        protected global::System.Web.UI.WebControls.TextBox tbModo;
 
         /// <summary>
         /// Control btAgregarMascota.
