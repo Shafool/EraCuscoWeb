@@ -63,6 +63,7 @@ Aquí podras gestionar las mascotas en el albergue
                 </table>
             </div>
         </div>
+
         <!-- El Modal -->
         <div class="modal" id="modalAgregarMascota">
         <form>
@@ -160,68 +161,68 @@ Aquí podras gestionar las mascotas en el albergue
 
         <%--Librería datatables--%>
         <script>
-                $(document).ready(function () {
-                    $('#tbMascotas').DataTable({
-                        "aaData": jsonMascotas,
-                        /*
-                        < th > Código</th >
-                        <th>Foto</th>
-                        <th>Mascota</th>
-                        <th>Etapa de vida</th>
-                        <th>Estado</th>   
-                        <th>Fecha de registro</th>
-                        <th>Usuario registrador</th>
-                        <th>Acciones</th>
-                        */
-                        "aoColumns": [
-                            { "data": "id" },
-                            {
-                                "data": "rutaFoto", "render": function (data) {
-                                    return `<img style="height: 100px; border-radius: 5px" src='${data}'></img>`
-                                },
-                                "orderable": false,
-                                "searchable": false
+            $(document).ready(function () {
+                $('#tbMascotas').DataTable({
+                    "aaData": jsonMascotas,
+                    /*
+                    < th > Código</th >
+                    <th>Foto</th>
+                    <th>Mascota</th>
+                    <th>Etapa de vida</th>
+                    <th>Estado</th>   
+                    <th>Fecha de registro</th>
+                    <th>Usuario registrador</th>
+                    <th>Acciones</th>
+                    */
+                    "aoColumns": [
+                        { "data": "id" },
+                        {
+                            "data": "rutaFoto", "render": function (data) {
+                                return `<img style="height: 100px; border-radius: 5px" src='${data}'></img>`
                             },
-                            {
-                                "data": "nombre",
-                                "render": function (data, type, row, meta) {
-                                    return "<div class='column'> <div class='row'> <p style=''>" + data + "</p> </div> <div class='row'> <p style='font-size: 12px;'>" + row.tipo + "</p> </div> </div>";
-                                },
-                                "orderable": false,
-                                "searchable": false
+                            "orderable": false,
+                            "searchable": false
+                        },
+                        {
+                            "data": "nombre",
+                            "render": function (data, type, row, meta) {
+                                return "<div class='column'> <div class='row'><a class='link - primary' data-toggle='modal' data-target='#modalAgregarMascota'> " + data + "</a></div> <div class='row'> <p style='font-size: 12px;'>" + row.tipo + " - " + row.raza + "</p> </div> </div>";
                             },
-                            {
-                                "data": "etapaVida",
-                                "render": function (data) {
-                                    return etapas[data];
-                                }
-                            },
-                            {
-                                "data": "estado",
-                                "render": function (data) {
-                                    switch (data) {
-                                        case 0:
-                                            return "<span class='badge rounded-pill bg-danger'>Adoptado</span>";
-                                            break;
-                                        case 1:
-                                            return "<span class='badge rounded-pill bg-success'>Disponible</span>";
-                                            break;
-                                    }
-                                }
-                            },
-                            { "data": "fechaRegistro" },
-                            { "data": "usuarioAlbergue" },
-                            {
-                                "render": function (data) {
-                                    return  "<div class='d-flex'>" +
-                                            "<button id='btEditar' class='btn btn-warning mx-1'><i class='fas fa-pencil-alt'></i></button>" +
-                                            "<button id='btEliminar' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button>" +
-                                            "<div>";
+                            "orderable": false,
+                            "searchable": false
+                        },
+                        {
+                            "data": "etapaVida",
+                            "render": function (data) {
+                                return etapas[data];
+                            }
+                        },
+                        {
+                            "data": "estado",
+                            "render": function (data) {
+                                switch (data) {
+                                    case 0:
+                                        return "<span class='badge rounded-pill bg-danger'>Adoptado</span>";
+                                        break;
+                                    case 1:
+                                        return "<span class='badge rounded-pill bg-success'>Disponible</span>";
+                                        break;
                                 }
                             }
-                        ]
-                    });
+                        },
+                        { "data": "fechaRegistro" },
+                        { "data": "usuarioNombre" },
+                        {
+                            "render": function (data) {
+                                return "<div class='d-flex'>" +
+                                    "<button id='btEditar' class='btn btn-warning mx-1'><i class='fas fa-pencil-alt'></i></button>" +
+                                    "<button id='btEliminar' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button>" +
+                                    "<div>";
+                            }
+                        }
+                    ]
                 });
+            });
 
 
         </script>

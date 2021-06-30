@@ -391,7 +391,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BD_EraCuscoEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entidades" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Adopcion" EntityType="Self.Adopcion" />
           <EntitySet Name="Mascota" EntityType="Self.Mascota" />
           <EntitySet Name="Solicitud" EntityType="Self.Solicitud" />
@@ -431,7 +431,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BD_EraCuscoModelStoreContainer" CdmEntityContainer="BD_EraCuscoEntities2">
+        <EntityContainerMapping StorageEntityContainer="BD_EraCuscoModelStoreContainer" CdmEntityContainer="Entidades">
           <EntitySetMapping Name="Adopcion">
             <EntityTypeMapping TypeName="BD_EraCuscoModel.Adopcion">
               <MappingFragment StoreEntitySet="Adopcion">

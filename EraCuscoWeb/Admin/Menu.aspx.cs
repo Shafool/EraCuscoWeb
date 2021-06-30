@@ -24,24 +24,25 @@ namespace EraCuscoWeb.Admin
             List<Mascota> listaMascotas = new List<Mascota>();
             JArray jsonMascotas = new JArray(); // Por defecto se tiene una lista vacia
 
-            using (BD_EraCuscoEntities2 datos = new BD_EraCuscoEntities2())
+            using (Entidades datos = new Entidades())
             {
                 listaMascotas = datos.Mascota.ToList();
-               
-                for(int i = 0; i < listaMascotas.Count; i++){
+
+                for (int i = 0; i < listaMascotas.Count; i++)
+                {
                     Mascota m = listaMascotas[i];
-
-
                     JObject mascota = new JObject(
                         new JProperty("id", m.id),
                         new JProperty("nombre", m.nombre),
                         new JProperty("descripcion", m.descripcion),
                         new JProperty("etapaVida", m.etapaVida),
                         new JProperty("fechaRegistro", m.fechaRegistro),
-                        new JProperty("tipo", m.tipo + " - " + m.raza),
+                        new JProperty("tipo", m.tipo),
+                        new JProperty("raza", m.raza),
                         new JProperty("estado", m.estado),
                         new JProperty("rutaFoto", m.rutaFoto),
-                        new JProperty("usuarioAlbergue",    $"{m.UsuarioAlbergue1.nombre} " +
+                        new JProperty("usuarioAlbergue", m.rutaFoto),
+                        new JProperty("usuarioNombre", $"{m.UsuarioAlbergue1.nombre} " +
                                                             $"{m.UsuarioAlbergue1.aPaterno} " +
                                                             $"{m.UsuarioAlbergue1.aMaterno}")
                                                             );

@@ -24,7 +24,7 @@ namespace EraCuscoWeb.Admin
             List<Mascota> listaAdopciones = new List<Mascota>();
             string jsonString = "{}"; // Por defecto se tiene una lista vacia
 
-            using (BD_EraCuscoEntities2 datos = new BD_EraCuscoEntities2())
+            using (Entidades datos = new Entidades())
             {
                 listaAdopciones = datos.Mascota.ToList();
                 jsonString = JsonSerializer.Serialize(listaAdopciones);
